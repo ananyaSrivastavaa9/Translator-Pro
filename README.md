@@ -1,78 +1,157 @@
-# 🌐 AI Translator Pro — Neon Glass Translation Dashboard
+# AI Translator Pro — Translation Dashboard
 
-A modern, fully responsive, browser-based **AI-powered translation dashboard** built using **HTML, CSS, and JavaScript**, integrated with **Microsoft Azure Translator API**.
+AI Translator Pro is a modern, fully responsive browser-based translation dashboard built with HTML, CSS, and JavaScript and integrated with the Microsoft Azure Translator API.
 
-AI Translator Pro combines translation, voice input, OCR, and smart UI interactions into a single seamless experience — designed with a premium **neon glassmorphism interface** and optimized for deployment on **GitHub Pages**.
-
----
-
-## 🚀 Live Demo
-
-🔗 **Try it here:**  
-[👉 AI Translator Pro Live](https://ananyasrivastavaa9.github.io/Translator-Pro/)
+It combines translation, voice input, OCR, translation history, and a floating assistant into a single user-friendly interface. The project is designed as a static frontend application and can be deployed on GitHub Pages.
 
 ---
 
-## 📌 Overview
+## Live Demo
 
-AI Translator Pro is a frontend-only intelligent translation tool that enables users to translate text in real time using Azure Translator services. It supports multiple input methods including typing, voice recognition, and image-based text extraction.
-
-The application focuses on performance, usability, and modern UI/UX design principles, making it suitable for educational, productivity, and portfolio use cases.
+[View Live Demo](https://ananyasrivastavaa9.github.io/Translator-Pro/)
 
 ---
 
-## ✨ Key Features
+## Overview
 
-### 🌍 Translation Engine
-- Real-time translation using **Microsoft Azure Translator API**
-- Automatic language detection
-- Swap source and target languages instantly
+AI Translator Pro is a frontend-only web application that allows users to translate text in real time using Microsoft Azure Translator services.
 
-### 🎤 Input Methods
-- Voice-to-text input using **Web Speech API (SpeechRecognition)**
-- Manual text input with instant processing
-
-### 📷 OCR (Image to Text)
-- Image text extraction using **Tesseract.js**
-- Supports both **camera capture** and **file upload**
-- Collapsible camera panel for clean UI
-
-### 🧠 Smart Utilities
-- Floating AI-style assistant for quick help
-- Translation history with search functionality
-- Copy translated text to clipboard
-- Text-to-speech output for translated results
-- Clear input/output controls
-
-### 💾 Data Persistence
-- API endpoint and key stored securely using `localStorage`
-- Persistent translation history
-
-### 🎨 UI/UX Design
-- Premium neon glassmorphism design
-- Smooth 3D hover tilt animation
-- Fully responsive layout (mobile + desktop)
-- Clean, modern dashboard-like interface
+The app supports multiple input methods including typing, speech recognition, and image-based text extraction. It is designed to be practical, responsive, and easy to use on both desktop and mobile devices.
 
 ---
 
-## 🛠️ Tech Stack
+## Features
+
+### Translation
+- Real-time text translation using Microsoft Azure Translator API
+- Auto language detection
+- Language swap option
+
+### Input Methods
+- Manual text input
+- Voice-to-text input using the Web Speech API
+- Image-to-text extraction using Tesseract.js
+
+### Utilities
+- Copy translated output
+- Text-to-speech for translated text
+- Translation history with search
+- Clear input and history controls
+- Floating assistant popup for quick help
+
+### Data Persistence
+- Azure endpoint and key saved in localStorage
+- Translation history saved in localStorage
+
+### Interface
+- Clean, modern dashboard layout
+- Fully responsive design
+- Smooth hover tilt effect
+- Collapsible camera section
+
+---
+
+## Tech Stack
 
 | Technology | Purpose |
 |------------|--------|
-| HTML5 | Structure |
-| CSS3 | Styling (Glassmorphism UI) |
+| HTML5 | Page structure |
+| CSS3 | Styling and responsive layout |
 | JavaScript (ES6) | Application logic |
-| Microsoft Azure Translator API | Translation engine |
-| Web Speech API | Voice recognition |
+| Microsoft Azure Translator API | Translation and language detection |
+| Web Speech API | Voice input |
 | Tesseract.js | OCR text extraction |
-| localStorage | Data persistence |
-| GitHub Pages | Deployment |
+| localStorage | Persistent browser storage |
+| GitHub Pages | Static deployment |
 
 ---
 
-## ⚙️ Setup Instructions
+## Project Structure
 
-### 1. Clone the Repository
+```text
+Translator-Pro/
+├─ index.html
+├─ styles.css
+├─ script.js
+└─ README.md
+```
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/ai-translator-pro.git
+git clone https://github.com/ananyasrivastavaa9/Translator-Pro.git
+cd Translator-Pro
+```
+
+### 2. Open the project
+Open `index.html` in your browser or deploy it using GitHub Pages.
+
+### 3. Add Azure credentials
+Enter:
+- Azure Translator Endpoint
+- Azure Translator Key
+
+Then click **Save API**.
+
+### 4. Use the app
+- Type text into the input box, or use voice input
+- Upload or capture an image to extract text with OCR
+- Select a target language
+- Click Translate
+- Use the assistant popup for help
+- View previous translations in the history panel
+
+---
+
+## GitHub Pages Deployment
+
+To publish the project live on GitHub Pages:
+
+1. Push the project files to a GitHub repository.
+2. Open the repository on GitHub.
+3. Go to **Settings** → **Pages**.
+4. Under **Build and deployment**, choose:
+   - Source: `Deploy from a branch`
+   - Branch: `main`
+   - Folder: `/ (root)`
+5. Save the settings.
+6. Your live site will be available at:
+
+```bash
+https://ananyasrivastavaa9.github.io/Translator-Pro/
+```
+
+---
+
+## Azure Configuration
+
+This application requires:
+- Azure Translator endpoint
+- Azure Translator key
+
+The values are stored in the browser using `localStorage` for convenience and reused on future visits.
+
+---
+
+## Browser Support
+
+- Voice input depends on browser support for `SpeechRecognition`.
+- OCR works in the browser through Tesseract.js.
+- Best experience is on modern Chromium-based browsers.
+
+---
+
+## Notes
+
+- This is a static frontend project.
+- No backend is required.
+- The app is suitable for portfolio, learning, and productivity use cases.
+
+---
+
+## License
+
+This project is intended for personal, educational, and portfolio use.
