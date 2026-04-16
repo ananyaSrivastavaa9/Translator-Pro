@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Translator Pro</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <div class="app">
+      <main class="main" id="tiltCard">
+        <div class="inner">
+          <div class="topbar">
+            <div class="brand">
+              <div class="logo">AI</div>
+              <div>
+                <h1>AI Translator Pro</h1>
+                <p class="sub">Neon glass dashboard with voice, OCR, history, and popup assistant</p>
+              </div>
+            </div>
+            <div class="pill">Neon Glass UI</div>
+          </div>
+
+          <div class="grid">
+            <div class="field">
+              <label>Azure Translator Endpoint</label>
+              <input id="endpoint" placeholder="https://api.cognitive.microsofttranslator.com" />
+            </div>
+
+            <div class="field">
+              <label>Azure Translator Key</label>
+              <input id="key" placeholder="Paste your Azure key" type="password" />
+            </div>
+
+            <div class="field">
+              <label>Input Text</label>
+              <textarea id="inputText" placeholder="Type, speak, or extract text from an image..."></textarea>
+              <div class="rowInfo">
+                <span class="tiny" id="charCount">0 characters</span>
+                <span class="tiny">Use voice input or OCR to fill this box automatically.</span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Actions</label>
+              <div class="actions">
+                <button class="btn secondary" id="voiceBtn">🎙 Voice</button>
+                <button class="btn secondary" id="cameraBtn">📷 Camera</button>
+                <button class="btn secondary" id="saveBtn">💾 Save API</button>
+                <button class="btn secondary" id="swapBtn">⇄ Swap</button>
+                <button class="btn secondary" id="clearBtn">✕ Clear</button>
+              </div>
+
+              <div class="cameraBox" id="cameraBox">
+                <div class="cameraWrap">
+                  <video id="video" autoplay playsinline></video>
+                  <div class="actions">
+                    <button class="btn secondary" id="startCamBtn">Start Camera</button>
+                    <button class="btn secondary" id="captureBtn">Capture OCR</button>
+                    <button class="btn secondary" id="stopCamBtn">Stop Camera</button>
+                  </div>
+                  <input type="file" id="imageFile" accept="image/*" />
+                  <canvas id="canvas" style="display:none;"></canvas>
+                  <div class="status" id="ocrStatus"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="langHeader">
+                <label style="margin-bottom:0;">Target Language</label>
+                <span class="tiny" id="currentLangLabel">Selected: Spanish</span>
+              </div>
+
+              <div class="selectWrap">
+                <select id="targetLang">
+                  <option value="">Auto Detect</option>
+                  <option value="es" selected>Spanish</option>
+                  <option value="fr">French</option>
+                  <option value="de">German</option>
+                  <option value="hi">Hindi</option>
+                  <option value="ja">Japanese</option>
+                  <option value="zh-Hans">Chinese (Simplified)</option>
+                  <option value="ar">Arabic</option>
+                  <option value="ru">Russian</option>
+                  <option value="pt">Portuguese</option>
+                  <option value="it">Italian</option>
+                  <option value="en">English</option>
+                  <option value="ko">Korean</option>
+                  <option value="tr">Turkish</option>
+                  <option value="nl">Dutch</option>
+                </select>
+                <div class="selectArrow">⌄</div>
+              </div>
+            </div>
+
+            <div class="field">
+              <button class="btn good translateBtnFull" id="translateBtn">Translate</button>
+            </div>
+
+            <div class="field">
+              <label>Translated Output</label>
+              <div class="result" id="outputText">Your translation will appear here.</div>
+              <div class="actions" style="margin-top:12px;">
+                <button class="btn secondary" id="copyBtn">Copy Output</button>
+                <button class="btn secondary" id="speakBtn">🔊 Speak Output</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="langHeader">
+                <label style="margin-bottom:0;">Translation History</label>
+                <button class="btn secondary" id="clearHistoryBtn" style="padding:8px 12px;">Clear History</button>
+              </div>
+              <input id="historySearch" placeholder="Search history..." />
+              <div class="historyList" id="historyList"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <button class="chat-fab" id="chatFab" aria-label="Open assistant">💬</button>
+
+  <dialog class="chat-dialog" id="chatDialog" aria-labelledby="chatTitle">
+    <div class="chat-dialog-head">
+      <div>
+        <h2 id="chatTitle">Assistant</h2>
+        <p>Ask about voice, OCR, API setup, history, or translation.</p>
+      </div>
+      <button class="chat-close" id="chatClose" aria-label="Close assistant">✕</button>
+    </div>
+
+    <div class="chatlog popup-log" id="chatLogPopup">
+      <div class="msg bot">Hi, I’m your assistant. Ask me anything about the app.</div>
+    </div>
+
+    <div class="chatInput popup-input">
+      <input id="chatInputPopup" placeholder="Ask a question..." />
+      <button class="btn" id="chatSendPopup">Send</button>
+    </div>
+  </dialog>
+</body>
+</html>
