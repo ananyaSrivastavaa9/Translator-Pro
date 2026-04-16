@@ -329,9 +329,9 @@ function setTilt(clientX, clientY) {
   const r = tiltCard.getBoundingClientRect();
   const x = (clientX - r.left) / r.width - 0.5;
   const y = (clientY - r.top) / r.height - 0.5;
-  const rx = (-y * 2).toFixed(2);
-  const ry = (x * 3).toFixed(2);
-  tiltCard.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+  const rx = (-y * 1.5).toFixed(2);
+  const ry = (x * 2).toFixed(2);
+  tiltCard.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
 }
 
 document.querySelector('.app').addEventListener('mousemove', e => {
