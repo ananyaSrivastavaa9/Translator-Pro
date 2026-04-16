@@ -9,7 +9,7 @@ AI Translator Pro combines translation, voice input, OCR, and smart UI interacti
 ## 🚀 Live Demo
 
 🔗 **Try it here:**  
-[👉 AI Translator Pro Live](https://your-live-link-here.com)
+[👉 AI Translator Pro Live](https://ananyasrivastavaa9.github.io/Translator-Pro/)
 
 ---
 
